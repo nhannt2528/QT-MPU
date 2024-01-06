@@ -3,6 +3,7 @@ import QtQuick.Window 2.15
 
 import "qrc:/background"
 import "qrc:/gause"
+import QtQuick.Controls 2.15
 
 
 Window {
@@ -13,38 +14,58 @@ Window {
     height: 1080
     visible: true
     title: qsTr("Gyro Compass")
-    //    visibility: Window.FullScreen
+    visibility: Window.FullScreen
     CustomBackground{
         width: 1920
         height: 1080
     }
-           ADIGause{
-                id: adiGauseId
-                width: 400
-                height: 400
-                anchors.centerIn: parent
+    ADIGause{
+        id: adiGauseId
+        width: 460
+        height: 440
+        x:372
+
+    }
+            GyroCompassGause{
+                id: gyroCompassId
+                width: 310
+                height: width
+                x:468
+                y:533
             }
 //    Row{
-//        anchors.horizontalCenter: parent.horizontalCenter
-//        anchors.verticalCenter: parent.verticalCenter
-//        spacing: 50
-//        ADIGause{
-//            id: adiGauseId
-//            width: 400
-//            height: 400
+//        Slider{
+//            id: x_slider_id
+//            from: 0
+//            to: 1920
+//            onValueChanged: {
+//                gyroCompassId.x=value
+//                console.log("x:",value );
+//            }
+//            Label{
+//                text: "x_slider"
+//            }
 //        }
-//        GyroCompassGause{
-//            id: gyroCompassId
-
-//            width: 310
-//            height: width
-////            anchors.verticalCenter: adiGauseId.verticalCenter
-//            anchors.top: adiGauseId.top
-//            anchors.topMargin: 100
-
+//        Slider{
+//            id: y_slider_id
+//            from: 0
+//            to: 1080
+//            onValueChanged: {
+//                gyroCompassId.y=value
+//                console.log("y:",value );
+//            }
+//            Label{
+//                text: "y_slider"
+//            }
 //        }
 
 //    }
+
+
+
+
+
+
 
 
 

@@ -2,8 +2,10 @@ import QtQuick 2.15
 
 Rectangle{
     id:backgroundId
-    color: "black"
-    anchors.top: parent.top
-    anchors.left: parent.left
+    Image {
+        id: idBackground
+        source: "qrc:/image/2.png"
+        anchors.fill: parent
+    }
 
 }

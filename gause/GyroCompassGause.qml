@@ -21,18 +21,18 @@ Item{
     }
 
 
-        Timer{
-            id:m_timer
-            interval: 500
-            repeat: true
-            running: true
-            onTriggered: {
-                m_angle=getRandomNumber(0,90);
-            }
-        }
-        function getRandomNumber(min, max) {
-            return Math.floor(Math.random() * (max - min + 1)) + min;
-        }
+//        Timer{
+//            id:m_timer
+//            interval: 500
+//            repeat: true
+//            running: true
+//            onTriggered: {
+//                m_angle=getRandomNumber(0,90);
+//            }
+//        }
+//        function getRandomNumber(min, max) {
+//            return Math.floor(Math.random() * (max - min + 1)) + min;
+//        }
 
         Image {
             id: idAngle
