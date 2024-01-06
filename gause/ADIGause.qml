@@ -9,63 +9,35 @@ Item {
 
     id:root
     width: 300
-    height: 300
-    Component.onCompleted: {
-
-    }
-
+    height: 400
+    clip: true
     Image {
         id: g_1_do_cao
         source: "qrc:/images/h1.png"
         fillMode: Image.PreserveAspectFit
         width: root.width/3
         anchors.horizontalCenter:  g_1_atitude_direction.horizontalCenter
-        visible: false
-        anchors.fill: parent
-
-        Rectangle {
-            width: parent.width
-            height: parent.height
-//            clip: true // Kích hoạt chức năng cắt
-//            color : "red"
-//            Image {
-//                source: g_1_do_cao.source // Sử dụng cùng source với image
-//                anchors.fill: parent // Đảm bảo hình ảnh fill toàn bộ Rectangle
-//            }
-        }
     }
-    //    Image {
-    //        id: g_3_atitude_direction
-    //        source: "qrc:/images/ADI_2.png"
-    //        fillMode: Image.PreserveAspectFit
-    //        width: root.width
+
+    Image {
+        id: g_1_atitude_direction
+        source: "qrc:/images/g_1.png"
+        fillMode: Image.PreserveAspectFit
+        width: g_3_atitude_direction.width-(g_3_atitude_direction.width*0.1887175324675325*2)
+        anchors.top: g_3_atitude_direction.top
+        anchors.topMargin: 300
+        anchors.horizontalCenter:  g_3_atitude_direction.horizontalCenter
+
+    }
+    Image {
+
+        id: g_3_atitude_direction
+        source: "qrc:/images/ADI_2.png"
+        fillMode: Image.PreserveAspectFit
+        width: root.width
+    }
 
 
-    //    }
 
-    //    Image {
-    //        id: g_1_atitude_direction
-
-    //        source: "qrc:/images/g_1.png"
-    //        fillMode: Image.PreserveAspectFit
-    //        width: g_3_atitude_direction.width-(g_3_atitude_direction.width*0.1887175324675325*2)
-    //        anchors.top: g_3_atitude_direction.top
-    //        anchors.topMargin: g_3_atitude_direction.height-(g_3_atitude_direction.height*0.53515625)
-    //        anchors.horizontalCenter:  g_3_atitude_direction.horizontalCenter
-
-    //    }
-    //    Clip {
-    //         id: clip
-    //         source: image1
-    //         anchors.fill: image2
-    //         visible: true // Hiển thị phần cắt của hình ảnh 1 theo hình ảnh 2
-    //     }
-    //    Image {
-    //        id: g_1_do_cao
-    //        source: "qrc:/images/h1.png"
-    //        fillMode: Image.PreserveAspectFit
-    //        width: root.width/3
-    //        anchors.horizontalCenter:  g_1_atitude_direction.horizontalCenter
-    //    }
 
 }

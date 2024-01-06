@@ -22,6 +22,7 @@ Window {
                 id: adiGauseId
                 width: 400
                 height: 400
+                anchors.centerIn: parent
             }
 //    Row{
 //        anchors.horizontalCenter: parent.horizontalCenter
