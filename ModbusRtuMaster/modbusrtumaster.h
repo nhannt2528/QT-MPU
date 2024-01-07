@@ -20,7 +20,7 @@ private slots:
     void onTimerTimeout();
 public:
     explicit ModbusRtuMaster(QObject *parent = nullptr);
-    void connectDevice();
+    bool connectDevice();
     void disconnectDevice();
     void readHoldingRegister(uint8_t slaveID, uint16_t offset, uint8_t qty, uint16_t *data);
 

@@ -12,16 +12,28 @@ Item {
     width: 400
     height: 500
     clip: true
-    Timer{
-        id:m_timer
-        interval: 500
-        repeat: true
-        running: true
-        onTriggered: {
-            do_cao=getRandomNumber(-90,90);
-            goc_quay=getRandomNumber(-45,45);
+    Connections{
+        target: my_mpu
+        function onDoCaoChanged(){
+            do_cao=my_mpu.doCao;
+//            console.log(do_cao)
+//            idAngle.setAngle=my_mpu.angleZ
+        }
+        function onGocNghiengChanged(){
+            goc_quay=my_mpu.gocNghieng;
+//              console.log(goc_quay)
         }
     }
+//    Timer{
+//        id:m_timer
+//        interval: 500
+//        repeat: true
+//        running: true
+//        onTriggered: {
+//            do_cao=getRandomNumber(-90,90);
+//            goc_quay=getRandomNumber(-45,45);
+//        }
+//    }
     function getRandomNumber(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
@@ -39,7 +51,7 @@ Item {
             width: g_3_atitude_direction.width/3
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.top: parent.top
-            anchors.topMargin: -242+do_cao
+            anchors.topMargin: -242+do_cao-51
         }
     }
     Image {

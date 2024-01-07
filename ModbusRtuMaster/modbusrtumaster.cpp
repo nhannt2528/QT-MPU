@@ -16,7 +16,7 @@ ModbusRtuMaster::ModbusRtuMaster(QObject *parent)
 //  timer = new QTimer(this);
 //    connect(timer, &QTimer::timeout, this, &ModbusRtuMaster::onTimerTimeout);
 //    timer->setInterval(10);
-    modbusMaster.setConnectionParameter(QModbusDevice::SerialPortNameParameter, "COM6");
+    modbusMaster.setConnectionParameter(QModbusDevice::SerialPortNameParameter, "COM3");
     modbusMaster.setConnectionParameter(QModbusDevice::SerialBaudRateParameter, QSerialPort::Baud9600);
     modbusMaster.setConnectionParameter(QModbusDevice::SerialDataBitsParameter, QSerialPort::Data8);
     modbusMaster.setConnectionParameter(QModbusDevice::SerialParityParameter, QSerialPort::NoParity);
@@ -25,9 +25,9 @@ ModbusRtuMaster::ModbusRtuMaster(QObject *parent)
 }
 
 
-void ModbusRtuMaster::connectDevice()
+bool ModbusRtuMaster::connectDevice()
 {
-
+    bool check=false;
 //    if (!serialPort.open(QIODevice::ReadWrite)) {
 //        qDebug() << "Không thể mở cổng COM";
 //        return;
@@ -36,12 +36,15 @@ void ModbusRtuMaster::connectDevice()
     if (!modbusMaster.connectDevice()) {
         qDebug() << "Không thể kết nối với thiết bị Modbus RTU";
 //        return;
+
     }
     else{
         qDebug()<<"connected modbus";
+        check=true;
 
     }
 // timer->start();
+    return check;
 }
 
 void ModbusRtuMaster::disconnectDevice()
