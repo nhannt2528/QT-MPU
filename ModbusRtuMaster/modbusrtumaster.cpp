@@ -34,7 +34,7 @@ bool ModbusRtuMaster::connectDevice()
 //    }
 
     if (!modbusMaster.connectDevice()) {
-        qDebug() << "Không thể kết nối với thiết bị Modbus RTU";
+        qDebug() << "khong the ket noi modbus";
 //        return;
 
     }
