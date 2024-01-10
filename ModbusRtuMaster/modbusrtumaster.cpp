@@ -16,7 +16,7 @@ ModbusRtuMaster::ModbusRtuMaster(QObject *parent)
 //  timer = new QTimer(this);
 //    connect(timer, &QTimer::timeout, this, &ModbusRtuMaster::onTimerTimeout);
 //    timer->setInterval(10);
-    modbusMaster.setConnectionParameter(QModbusDevice::SerialPortNameParameter, "COM3");
+    modbusMaster.setConnectionParameter(QModbusDevice::SerialPortNameParameter, "ttyUSB0");
     modbusMaster.setConnectionParameter(QModbusDevice::SerialBaudRateParameter, QSerialPort::Baud9600);
     modbusMaster.setConnectionParameter(QModbusDevice::SerialDataBitsParameter, QSerialPort::Data8);
     modbusMaster.setConnectionParameter(QModbusDevice::SerialParityParameter, QSerialPort::NoParity);
@@ -76,12 +76,12 @@ void ModbusRtuMaster::readHoldingRegister(uint8_t slaveID, uint16_t offset, uint
 
         } else {
             // Đọc dữ liệu không thành công
-            qDebug() << "Lỗi khi đọc dữ liệu từ thiết bị Modbus RTU ID 1:" << reply->errorString();
+            qDebug() << "khong doc duoc ID 1:" << reply->errorString();
         }
 
         // Giải phóng bộ nhớ
         reply->deleteLater();
  } else {
-        qDebug() << "Không thể gửi yêu cầu đọc dữ liệu đến thiết bị Modbus RTU";
+        qDebug() << "khong the gui toi RTU";
  }
 }
